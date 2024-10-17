@@ -22,7 +22,7 @@ app.get("/", (req, res) => {
 
 
   // Usa el enrutador para las rutas relacionadas con estudiantes
-app.use("/", router);
+//app.use("/", router);
 
 
 

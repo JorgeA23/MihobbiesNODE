@@ -1,11 +1,16 @@
 import express from "express";
-//import cors from "cors";
+import cors from "cors";
 
 
 const app = express();
 
 //app.use(cors());
 //app.use("/public", express.static("public"));
+app.use(cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use("/public", express.static("public"));
+
 
 
 //Establece el motor de plantillas
@@ -21,14 +26,9 @@ app.get("/", (req, res) => {
   });
 
 
-  // Usa el enrutador para las rutas relacionadas con estudiantes
-//app.use("/", router);
-
-
-
-
-
-
+app.get('/estudiantes', (req, res) => {
+    res.render('estudiantes'); // Renderiza about.ejs
+});
 
 
   // es el codgio que se utiliza para desplegar el servidor en 
